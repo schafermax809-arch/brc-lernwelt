@@ -46,9 +46,13 @@ Offene Antworten werden selbst anhand von Lösungshinweisen bewertet. Die Websit
 
 Keine Werbung, externen Schriftarten, Analytics oder Drittanbieter-Skripte. Der Lernfortschritt bleibt in `localStorage` des jeweiligen Browsers. Ein manueller Export enthält die Lerndaten. Der jeweilige Hostinganbieter verarbeitet technisch notwendige Zugriffsdaten nach seinen eigenen Bestimmungen.
 
+## Gestaltung
+
+Eigenständiges Redesign mit großen Überschriften, dunklem Hintergrund, Neongelb, CSS-3D-Lernkarten und bewegten Einstiegsbereichen. Die Lerninhalte und der lokale Fortschritt bleiben erhalten. Animationen berücksichtigen die Systemeinstellung „Bewegung reduzieren“. Die Schriftarten Anton und Space Grotesk werden lokal ausgeliefert; ihre SIL Open Font Licenses liegen in `assets/fonts/`.
+
 ## Struktur
 
-- `index.html`, `style.css`: Oberfläche und responsive Gestaltung
+- `index.html`, `style.css`, `design.css`: Oberfläche und responsive Gestaltung
 - `data.js`: Lernzettel, Karten, Quiz und Probeklausur
 - `math.js`: reine Rechenfunktionen
 - `exercises.js`: Aufgabenvarianten und Lösungswege

@@ -3,11 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#244c3a">
+  <meta name="theme-color" content="#101210">
   <meta name="description" content="Deine BRC-Lernwelt: verständliche Lernzettel, Karteikarten, Quiz, Rechentraining und Klausurübungen für das Vorabitur.">
   <title>BRC Lernwelt · Dein Vorabi im Blick</title>
   <link rel="icon" type="image/svg+xml" href="./favicon.svg">
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./design.css">
+  <link rel="preload" href="./assets/fonts/Anton-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <script type="module" src="./app.js"></script>
 </head>
 <body>
@@ -19,9 +21,9 @@
     <div class="sidebar-bottom"><span class="live-dot"></span> Dein Fortschritt bleibt hier.<p>Automatisch in diesem Browser gespeichert.</p><a href="#info">Über die Lernwelt & Datenschutz ↗</a></div>
   </aside>
   <div class="workspace">
-    <header class="topbar"><button class="icon-button mobile-menu" id="menu" aria-label="Menü öffnen" aria-expanded="false">☰</button><span id="breadcrumb">Dein Lernraum / Übersicht</span><div class="topbar-right"><span class="exam-tag">BRC · Vorabitur</span><span class="avatar" aria-label="Dein Lernprofil">DU</span></div></header>
+    <header class="topbar"><a class="header-brand" href="#home" aria-label="BRC Lernwelt – Übersicht"><span class="brand-monogram" aria-hidden="true">B/</span><span>BRC<br><strong>LERNWELT</strong></span></a><span id="breadcrumb">Dein Lernraum / Übersicht</span><div class="topbar-right"><a class="header-link" href="#learn">LERNEN ↗</a><a class="header-link" href="#plan">DEIN PLAN ↗</a><button class="icon-button mobile-menu" id="menu" aria-label="Menü öffnen" aria-expanded="false" aria-controls="sidebar"><span>MENÜ</span><i aria-hidden="true"></i></button></div></header>
     <main id="main" tabindex="-1"></main>
-    <footer class="footer"><span>BRC Lernwelt <span aria-hidden="true">✦</span> Schritt für Schritt zum Vorabi.</span><a href="#info">Materialbasis & Hinweise</a></footer>
+    <footer class="footer"><a href="#home" class="footer-wordmark">BRC<span aria-hidden="true">/</span></a><span>DEIN WISSEN. DEIN NÄCHSTES LEVEL.</span><a href="#info">Materialbasis & Datenschutz ↗</a></footer>
   </div>
   <div id="toast" role="status" aria-live="polite"></div>
   <noscript>Bitte aktiviere JavaScript für Quiz, Lernfortschritt und Rechenübungen.</noscript>
