@@ -1,0 +1,8 @@
+{
+  "name": "brc-lernwelt",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": { "start": "node server.mjs", "test": "node --test tests/*.test.mjs" },
+  "description": "Interaktive BRC-Vorabi-Vorbereitung ohne externe Abhängigkeiten"
+}

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#244c3a">
+  <meta name="description" content="Deine BRC-Lernwelt: verständliche Lernzettel, Karteikarten, Quiz, Rechentraining und Klausurübungen für das Vorabitur.">
+  <title>BRC Lernwelt · Dein Vorabi im Blick</title>
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Zum Inhalt</a>
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#home"><span class="brand-icon">b.</span><span>BRC <strong>Lernwelt</strong><small>DEIN VORABI. DEIN TEMPO.</small></span></a>
+    <span class="nav-label">DEIN LERNRAUM</span>
+    <nav aria-label="Hauptnavigation" id="nav"></nav>
+    <div class="sidebar-bottom"><span class="live-dot"></span> Dein Fortschritt bleibt hier.<p>Automatisch in diesem Browser gespeichert.</p><a href="#info">Über die Lernwelt & Datenschutz ↗</a></div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar"><button class="icon-button mobile-menu" id="menu" aria-label="Menü öffnen" aria-expanded="false">☰</button><span id="breadcrumb">Dein Lernraum / Übersicht</span><div class="topbar-right"><span class="exam-tag">BRC · Vorabitur</span><span class="avatar" aria-label="Dein Lernprofil">DU</span></div></header>
+    <main id="main" tabindex="-1"></main>
+    <footer class="footer"><span>BRC Lernwelt <span aria-hidden="true">✦</span> Schritt für Schritt zum Vorabi.</span><a href="#info">Materialbasis & Hinweise</a></footer>
+  </div>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <noscript>Bitte aktiviere JavaScript für Quiz, Lernfortschritt und Rechenübungen.</noscript>
+</body>
+</html>
