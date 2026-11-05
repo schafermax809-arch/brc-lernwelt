@@ -8,3 +8,5 @@
 .strategy-comparison summary>span:last-of-type{min-width:0}.strategy-comparison summary strong{overflow-wrap:anywhere;hyphens:auto}
 
 body[data-course=main] .page-heading>div{min-width:0}body[data-course=main] .page-heading h1{overflow-wrap:anywhere;hyphens:auto}
+
+.segment-table-wrap{overflow-x:auto;max-width:100%}.segment-table{width:100%;border-collapse:collapse;table-layout:fixed;margin:20px 0}.segment-table caption{text-align:left;font-size:11px;color:var(--muted);padding-bottom:12px}.segment-table th,.segment-table td{border:1px solid var(--line);padding:18px 14px;text-align:left;vertical-align:top;font-size:12px;line-height:1.8;overflow-wrap:anywhere;hyphens:auto}.segment-table thead th{color:var(--acid);font-weight:500}.segment-table th:first-child{width:22%}.segment-table tbody th{color:var(--muted);font-weight:500}@media(max-width:650px){.segment-table th,.segment-table td{font-size:10px;padding:12px 7px}.segment-table th:first-child{width:25%}}@media print{.segment-table th,.segment-table td{color:black!important;border-color:#aaa;font-size:10px}}

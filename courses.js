@@ -9,7 +9,7 @@ const mainChecklist=[
  ['mk4','Aktuelle Lehrerergänzung','Vorwärtskalkulation anwenden','vorwaerts'],
  ['mk5','Aktuelle Lehrerergänzung','Rückwärtskalkulation anwenden','rueckwaerts'],
  ['mk6','Aktuelle Lehrerergänzung','Differenzkalkulation anwenden','kalkulation'],
- ['mk7','Buchbezug','Marktsegmentierung und fünf Marktbearbeitungsstrategien, S. 65–67','marktsegmentierung'],
+ ['mk7','Buchbezug','Marktsegmentierung und fünf Marktbearbeitungsstrategien, S. 65–68','marktsegmentierung'],
  ['mk8','Buchbezug','Ansoff: vier Wachstumsstrategien erklären und zuordnen, S. 71–72','produktmatrix']
 ].map(([id,section,label,lesson])=>({id,section,label,lesson}));
 export const courses={
