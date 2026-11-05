@@ -9,6 +9,7 @@
   <link rel="icon" type="image/svg+xml" href="./favicon.svg">
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./design.css">
+  <link rel="stylesheet" href="./courses.css">
   <link rel="preload" href="./assets/fonts/Anton-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <script type="module" src="./app.js"></script>
 </head>
@@ -21,7 +22,7 @@
     <div class="sidebar-bottom"><span class="live-dot"></span> Dein Fortschritt bleibt hier.<p>Automatisch in diesem Browser gespeichert.</p><a href="#info">Über die Lernwelt & Datenschutz ↗</a></div>
   </aside>
   <div class="workspace">
-    <header class="topbar"><a class="header-brand" href="#home" aria-label="BRC Lernwelt – Übersicht"><span class="brand-monogram" aria-hidden="true">B/</span><span>BRC<br><strong>LERNWELT</strong></span></a><span id="breadcrumb">Dein Lernraum / Übersicht</span><div class="topbar-right"><a class="header-link" href="#learn">LERNEN ↗</a><a class="header-link" href="#plan">DEIN PLAN ↗</a><button class="icon-button mobile-menu" id="menu" aria-label="Menü öffnen" aria-expanded="false" aria-controls="sidebar"><span>MENÜ</span><i aria-hidden="true"></i></button></div></header>
+    <header class="topbar"><a class="header-brand" href="#home" aria-label="BRC Lernwelt – Übersicht"><span class="brand-monogram" aria-hidden="true">B/</span><span>BRC<br><strong>LERNWELT</strong></span></a><span id="breadcrumb">Dein Lernraum / Übersicht</span><div class="topbar-right"><div class="course-switch" role="group" aria-label="Kurs auswählen"><button type="button" data-course-button="main" aria-pressed="true">Mein Kurs</button><button type="button" data-course-button="glaeser" aria-pressed="false">Frau Gläser</button></div><a class="header-link" href="#learn">LERNEN ↗</a><button class="icon-button mobile-menu" id="menu" aria-label="Menü öffnen" aria-expanded="false" aria-controls="sidebar"><span>MENÜ</span><i aria-hidden="true"></i></button></div></header>
     <main id="main" tabindex="-1"></main>
     <footer class="footer"><a href="#home" class="footer-wordmark">BRC<span aria-hidden="true">/</span></a><span>DEIN WISSEN. DEIN NÄCHSTES LEVEL.</span><a href="#info">Materialbasis & Datenschutz ↗</a></footer>
   </div>

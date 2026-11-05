@@ -36,3 +36,9 @@ export function makebuy({material,mgk,lohn,fgk,vv,produktion,liste,rabatt,skonto
  const fremd=bezug({liste,rabatt,skonto,transport,menge:kaufmenge});
  return {herstell,eigen,eigenstueck,...fremd};
 }
+export function vorwaerts(d){const costs=kalkulation({...d,liste:0,rabatt:0,skonto:0});const bar=costs.selbstkosten*(1+d.gewinnsatz/100),ziel=bar/(1-d.skonto/100),liste=ziel/(1-d.rabatt/100);return {...costs,bar,ziel,liste};}
+export function rueckwaerts(d){const ziel=d.liste*(1-d.rabatt/100),bar=ziel*(1-d.skonto/100),selbstkosten=bar/(1+d.gewinnsatz/100),herstellkosten=selbstkosten/(1+(d.vwgk+d.vtgk)/100),fertigungskosten=d.lohn*(1+d.fgk/100),materialkosten=herstellkosten-fertigungskosten,material=materialkosten/(1+d.mgk/100);return {ziel,bar,selbstkosten,herstellkosten,fertigungskosten,materialkosten,material};}
+export function kennzahlen({eigenkapital,gesamtkapital,liquide,kurzfristig,anlage}){return {ekquote:gesamtkapital>0?eigenkapital/gesamtkapital*100:null,liquiditaet:kurzfristig>0?liquide/kurzfristig*100:null,deckung:anlage>0?eigenkapital/anlage*100:null};}
+export function lagerkritisch({eigenfix,fremdfix,eigenvariabel,fremdvariabel,menge}){const diff=fremdvariabel-eigenvariabel;return {kritisch:diff!==0?(eigenfix-fremdfix)/diff:null,eigen:eigenfix+eigenvariabel*menge,fremd:fremdfix+fremdvariabel*menge};}
+export function deckungsbeitrag({preis,variabel,menge,minuten}){const stueck=preis-variabel;return {stueck,gesamt:stueck*menge,relativ:minuten>0?stueck/minuten:null};}
+export function andler({bedarf,kosten,preis,satz}){return Math.sqrt(2*bedarf*kosten/(preis*satz/100));}

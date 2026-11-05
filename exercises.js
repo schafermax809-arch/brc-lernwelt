@@ -1,9 +1,11 @@
 import {kalkulation,breakeven,bestellen,nettobedarf,bezug,makebuy} from './math.js';
+import {extraExercise} from './extra-exercises.js';
 const euro=n=>new Intl.NumberFormat('de-DE',{minimumFractionDigits:2,maximumFractionDigits:2}).format(n)+' €';
 const num=n=>new Intl.NumberFormat('de-DE',{maximumFractionDigits:2}).format(n);
-export const exerciseTypes=[['kalkulation','Differenzkalkulation'],['breakeven','Break-even'],['bestellmenge','Optimale Bestellmenge'],['bedarf','Nettobedarf'],['bezug','Bezugskalkulation'],['makebuy','Make or Buy']];
+export const exerciseTypes=[['kennzahlen','Drei Kennzahlen'],['vorwaerts','Vorwärtskalkulation'],['rueckwaerts','Rückwärtskalkulation'],['kalkulation','Differenzkalkulation'],['breakeven','Break-even'],['bedarf','Nettobedarf'],['bezug','Bezugskalkulation'],['makebuy','Make or Buy']];
 export function makeExercise(type,variant=0){
  const i=((variant%3)+3)%3;
+ const extra=extraExercise(type,i);if(extra)return extra;
  if(type==='kalkulation'){
  const d=[{material:8.2,lohn:12,mgk:23,fgk:210,vwgk:6,vtgk:6,liste:90,rabatt:5,skonto:2},{material:12,lohn:16,mgk:25,fgk:150,vwgk:8,vtgk:5,liste:110,rabatt:10,skonto:2},{material:15,lohn:20,mgk:20,fgk:120,vwgk:5,vtgk:7,liste:120,rabatt:8,skonto:3}][i],r=kalkulation(d);
  return {title:'Vom Listenpreis zum Gewinn',lesson:type,source:i===0?'Zahlen aus deinem Klausurfoto':'Eigenes Übungsbeispiel',description:'Berechne das vollständige Schema auf Papier. Prüfe anschließend deine drei Endergebnisse. Alle Verkaufspreise sind netto.',givens:[['Fertigungsmaterial',euro(d.material)],['Fertigungslöhne',euro(d.lohn)],['MGK / FGK',`${d.mgk} % / ${d.fgk} %`],['Verwaltung / Vertrieb',`${d.vwgk} % / ${d.vtgk} %`],['Listenverkaufspreis',euro(d.liste)],['Rabatt / Skonto',`${d.rabatt} % / ${d.skonto} %`]],answers:[['Selbstkosten','€',r.selbstkosten],['Gewinn','€',r.gewinn],['Gewinnzuschlag','%',r.gewinnprozent]],steps:[['Materialkosten',`${euro(d.material)} + ${d.mgk} % = ${euro(r.materialkosten)}`],['Fertigungskosten',`${euro(d.lohn)} + ${d.fgk} % = ${euro(r.fertigungskosten)}`],['Herstellkosten',`${euro(r.materialkosten)} + ${euro(r.fertigungskosten)} = ${euro(r.herstellkosten)}`],['Selbstkosten',`Herstellkosten + ${d.vwgk} % Verwaltung + ${d.vtgk} % Vertrieb = ${euro(r.selbstkosten)}`],['Barverkaufspreis',`${euro(d.liste)} × ${num(1-d.rabatt/100)} × ${num(1-d.skonto/100)} = ${euro(r.bar)}`],['Gewinn',`Barverkaufspreis − Selbstkosten = ${euro(r.gewinn)}`],['Gewinnzuschlag',`Gewinn / Selbstkosten × 100 = ${num(r.gewinnprozent)} %`]]};
