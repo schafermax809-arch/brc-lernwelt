@@ -1,0 +1,20 @@
+name: Cancel stalled Pages publication
+on:
+  push:
+    branches: [maintenance/cancel-stuck-pages]
+permissions:
+  pages: write
+jobs:
+  cancel-stalled-publication:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Cancel the specific stalled deployment
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl --fail-with-body --silent --show-error --request POST \
+            --header "Accept: application/vnd.github+json" \
+            --header "Authorization: Bearer $GH_TOKEN" \
+            --header "X-GitHub-Api-Version: 2026-03-10" \
+            https://api.github.com/repos/schafermax809-arch/brc-lernwelt/pages/deployments/560e21850a7a49113f21baa434aba07c2b55c41e/cancel
