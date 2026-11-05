@@ -4,3 +4,5 @@
 @media print{.general-toggle,.methods-goals,.methods-selector,.method-title button,.methods-launch{display:none}.method-template{background:white;color:black;border-color:#aaa}.method-table th,.method-table td{border-color:#aaa;color:black}.method-source,.methods-extra p{color:#444}}
 
 @media(max-width:360px){.header-brand>span:last-child{display:none}.header-brand{gap:0}.topbar{gap:5px;padding-left:12px;padding-right:12px}.general-toggle{max-width:67px}.course-switch button{padding-left:5px;padding-right:5px}}
+
+.methods-goals a{display:block}.methods-goals strong{hyphens:manual;overflow-wrap:normal}

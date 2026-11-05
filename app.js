@@ -1,4 +1,4 @@
-import {renderMethods} from './methods.js?v=20261105-methods';
+import {renderMethods} from './methods.js?v=20261105-methods2';
 import {buildGeneralCourse} from './general-mode.js?v=20261105-methods';
 import {mountProposal,proposalDefault,validateProposal,proposalSummary} from './proposal.js?v=20261105-vorschlag';
 import {courses,calculationTotal,activeCalculationIds} from './courses.js?v=20261105-methods';
