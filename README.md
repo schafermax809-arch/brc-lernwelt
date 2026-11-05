@@ -17,6 +17,12 @@ Zwei getrennte Kursbereiche: **Mein Kurs** (Vorschlag plus aktuelle Lehrerergän
 - Lernfortschritt im Browser, JSON-Export und validierter Import
 - Druckansicht, Tastaturbedienung und mobile Navigation
 
+## Allgemeine Lernansicht und Handlungsergebnisse
+
+Der Schalter **Allgemeine Ansicht** (auch Alt+Shift+L) blendet den Vorschlagsbereich und dessen Hinweise aus. Direkte Vorschlagsrouten führen in dieser Ansicht zur Übersicht. Allgemeine Beispiele und eigene Rechenvarianten werden verwendet; der Lernstand ist von der bisherigen Ansicht getrennt. Ein- und Ausschalten löscht keine gespeicherten Antworten. Dies ist ausschließlich eine Anzeigeoption, keine Zugriffssperre für öffentliche Dateien oder die Git-Historie.
+
+Unter **Handlungsergebnisse** werden sechs zentrale Formate und sechs weitere laut bereitgestellter Übersicht für BRC ausgewiesene Formate erklärt. Grundlage sind der Methodenreader (Juni 2022) und die Handlungsergebnisliste ab Abitur 2024 (Stand 02.03.2021). Die Seite enthält eigene Zusammenfassungen, Schrittfolgen, Musteraufbauten, Beispiele und Kontrollen mit PDF-Seitenverweisen. Original-PDFs werden nicht veröffentlicht.
+
 ## Lokal öffnen
 
 Mit Node.js:
