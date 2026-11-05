@@ -1,4 +1,4 @@
-import {applyTeacherUpdate} from './teacher-update.js';
+import {applyTeacherUpdate} from './teacher-update.js?v=20261105-68';
 export const groups = [
  {id:'kosten',name:'Kostenrechnung',short:'Mit Zahlen sicher werden',color:'peach',symbol:'↗'},
  {id:'beschaffung',name:'Beschaffung & Lager',short:'Vom Bedarf bis zur Lieferung',color:'lavender',symbol:'◇'},

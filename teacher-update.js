@@ -1,5 +1,5 @@
 // Hauptkurs: Lehrerergänzung und Abgleich mit den bereitgestellten Buchseiten.
-import {bookLessons,bookQuiz} from './book-content.js';
+import {bookLessons,bookQuiz} from './book-content.js?v=20261105-68';
 export const teacherLessons=[
  {id:'kennzahlen',group:'kosten',title:'Drei Kennzahlen auswerten',minutes:13,tag:'Auswerten & eine berechnen',examNote:'Lehrerergänzung: Eigenkapitalquote, Liquidität 1. Grades und Deckungsgrad 1. Grades auswerten; nur eine davon berechnen.',intro:'Kennzahlen beantworten unterschiedliche Fragen: Wie wird finanziert, wie viel ist sofort zahlbar und wie ist das Anlagevermögen gedeckt?',sections:[
  ['Eigenkapitalquote','Eigenkapital / Gesamtkapital × 100. Eine Quote von 40 % bedeutet: 40 % des Kapitals sind Eigenkapital. Eine höhere Quote kann finanzielle Unabhängigkeit und Verlusttragfähigkeit stärken. Sie beweist allein weder Rentabilität noch Zahlungsfähigkeit. Vergleiche Entwicklung, Branche und Finanzierungssituation statt einen starren Idealwert zu behaupten.'],

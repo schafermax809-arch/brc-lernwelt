@@ -1,4 +1,4 @@
-import {courses,calculationTotal,activeCalculationIds} from './courses.js';
+import {courses,calculationTotal,activeCalculationIds} from './courses.js?v=20261105-68';
 import {parseNumber,round} from './math.js';
 let courseMode='main';try{if(localStorage.getItem('brc-course-v1')==='glaeser')courseMode='glaeser';}catch{}
 let activeCourse=courses[courseMode];
