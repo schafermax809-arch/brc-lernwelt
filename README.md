@@ -12,6 +12,7 @@ Zwei getrennte Kursbereiche: **Mein Kurs** (Vorschlag plus aktuelle Lehrerergän
 - Wissensquiz mit sofortiger Begründung und Auswertung
 - Hauptkurs: acht Rechenaufgabentypen; Frau Gläser: sechs, jeweils mit drei Varianten und Lösungswegen
 - Acht Lernetappen mit Checkliste
+- Vorabi-Vorschlag durcharbeiten: 23 Aufgaben aus den Fotos (11 WEBRITEC / 12 weitere CYCLE-Aufgaben), Antwortfelder mit automatischem Speichern, Tipps, Lösungshinweise, Bearbeitungsmarkierungen und Wiederaufnahme. Enthalten im Hauptkurs-Fortschrittsexport. Fehlende Anlagen und die nach Lehrerergänzung optionale alte Bestellmengenrechnung sind gekennzeichnet. Keine Zusammenrechnung unterschiedlicher Aufgabenfassungen zu einer offiziellen Punktzahl.
 - Verkürzte Probeklausur: 85 Minuten, sieben Aufgaben, 67 Punkte, Selbstkorrektur
 - Lernfortschritt im Browser, JSON-Export und validierter Import
 - Druckansicht, Tastaturbedienung und mobile Navigation
@@ -61,6 +62,7 @@ Eigenständiges Redesign mit großen Überschriften, dunklem Hintergrund, Neonge
 - `math.js`: reine Rechenfunktionen
 - `exercises.js`: Aufgabenvarianten und Lösungswege
 - `extra-exercises.js`: Kennzahlen, Vorwärts-/Rückwärtskalkulation, Lagervergleich und Deckungsbeitrag
+- `proposal-data.js`, `proposal.js`, `proposal.css`: Aufgabensammlung, Bearbeitungsmodus und validierter Antwortspeicher
 - `app.js`: Navigation, Lernfunktionen und lokaler Fortschritt
 - `server.mjs`: lokaler Entwicklungsserver
 - `tests/`: fachliche und strukturelle Prüfungen beider Kursprofile
