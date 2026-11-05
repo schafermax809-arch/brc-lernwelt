@@ -2,7 +2,25 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {courses,calculationTotal,activeCalculationIds} from '../courses.js';
 import {kennzahlen,vorwaerts,rueckwaerts,lagerkritisch,deckungsbeitrag,andler} from '../math.js';
+import {createHash} from 'node:crypto';
 const near=(a,b)=>assert.ok(Math.abs(a-b)<1e-7,`${a} != ${b}`);
+
+test('Buchabgleich: Ansoff deckt alle vier Produkt-Markt-Kombinationen ab',()=>{
+ const l=courses.main.lessons.find(l=>l.id==='produktmatrix');
+ assert.deepEqual(l.matrix.map(f=>[f.product,f.market,f.name]),[
+  ['vorhanden','vorhanden','Marktdurchdringung'],['vorhanden','neu','Marktentwicklung'],
+  ['neu','vorhanden','Produktentwicklung'],['neu','neu','Diversifikation']
+ ]);
+ assert.equal(courses.main.quiz.filter(q=>q.lesson===l.id).length,6);
+ for(const q of courses.main.quiz){assert.ok(Number.isInteger(q.correct)&&q.correct>=0&&q.correct<q.options.length);assert.equal(new Set(q.options).size,q.options.length);}
+});
+test('Buchabgleich: fünf Bearbeitungsstrategien und unveränderter Gläser-Kurs',()=>{
+ const l=courses.main.lessons.find(l=>l.id==='marktsegmentierung');
+ assert.equal(l.strategies.length,5);
+ assert.deepEqual(l.strategies.map(s=>s.scope),['Gesamtmarkt','Ein Segment oder eine Nische','Alle wichtigen Marktsegmente','Mehrere gezielt ausgewählte Segmente','Einzelner Kunde als Segment']);
+ assert.match(l.sections.find(([title])=>title.includes('Soziodemografische'))[1],/demografische UND sozioökonomische/);
+ assert.equal(createHash('sha256').update(JSON.stringify(courses.glaeser)).digest('hex'),'e15752ebabb3d49f96322f5479ea6f5eb60a3769ce81a9e9a49d84770b2a4370');
+});
 test('Hauptkurs: Kennzahlen sowie drei Kalkulationsrichtungen; Bestellmenge ohne Rechenaufgaben',()=>{
  const c=courses.main;
  for(const id of ['kennzahlen','vorwaerts','rueckwaerts','kalkulation','marktsegmentierung','produktmatrix'])assert.ok(c.lessons.some(l=>l.id===id));
@@ -10,7 +28,7 @@ test('Hauptkurs: Kennzahlen sowie drei Kalkulationsrichtungen; Bestellmenge ohne
  assert.ok(!c.lessons.find(l=>l.id==='bestellmenge').formula);
  assert.match(c.lessons.find(l=>l.id==='bestellmenge').examNote,/keine Berechnung/);
  assert.equal(c.makeExercise('kennzahlen',0).answers.length,1);
- assert.match(c.lessons.find(l=>l.id==='produktmatrix').examNote,/fehlen/);
+ assert.match(c.lessons.find(l=>l.id==='produktmatrix').title,/Ansoff/);
 });
 test('Frau Gläser: alle 19 Lernziele und eigenes Bestellmengendiagramm',()=>{
  const c=courses.glaeser;assert.equal(c.checklist.length,19);

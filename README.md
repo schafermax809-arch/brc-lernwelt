@@ -4,7 +4,7 @@ Eine responsive deutschsprachige Lernwebsite für die BRC-Vorabiturvorbereitung.
 
 ## Inhalte und Funktionen
 
-Zwei getrennte Kursbereiche: **Mein Kurs** (Vorschlag plus aktuelle Lehrerergänzung) und **Frau Gläser** (zusätzliche Checkliste, blaue Akzentfarbe). Lernmarkierungen, Quiz, Checklisten, Exporte und Generalprobe werden pro Kurs getrennt geführt. Im Hauptkurs wird die optimale Bestellmenge ohne Rechnung/Grafik behandelt, bei Frau Gläser dagegen mit Tabelle, Formel und Diagramm. Die genannten Buchseiten zur Marktsegmentierung und Produktmatrix fehlen noch; insbesondere das konkrete Matrixmodell ist ausdrücklich ungeklärt.
+Zwei getrennte Kursbereiche: **Mein Kurs** (Vorschlag plus aktuelle Lehrerergänzung) und **Frau Gläser** (zusätzliche Checkliste, blaue Akzentfarbe). Lernmarkierungen, Quiz, Checklisten, Exporte und Generalprobe werden pro Kurs getrennt geführt. Im Hauptkurs wird die optimale Bestellmenge ohne Rechnung/Grafik behandelt, bei Frau Gläser dagegen mit Tabelle, Formel und Diagramm. Die bereitgestellten Buchseiten 65–67 und 71–72 sind im Hauptkurs eingearbeitet: Marktsegmentierung mit drei Kriteriengruppen und fünf Bearbeitungsstrategien sowie die Produkt-Markt-Matrix nach Ansoff. Seite 68 liegt nicht vor; ihr konkretes Beispiel wird nicht ergänzt. Die Originalfotos bleiben außerhalb des Repositorys.
 
 - Lernzettel zu Kostenrechnung, Beschaffung, Lager, Personal, Führung und Klausurtechnik
 - Suchfunktion und Themenfilter

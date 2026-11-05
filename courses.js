@@ -9,8 +9,8 @@ const mainChecklist=[
  ['mk4','Aktuelle Lehrerergänzung','Vorwärtskalkulation anwenden','vorwaerts'],
  ['mk5','Aktuelle Lehrerergänzung','Rückwärtskalkulation anwenden','rueckwaerts'],
  ['mk6','Aktuelle Lehrerergänzung','Differenzkalkulation anwenden','kalkulation'],
- ['mk7','Buchbezug','Marktsegmentierung, Buch S. 65–68','marktsegmentierung'],
- ['mk8','Buchbezug','Produktmatrix, Buch S. 71–72: Modell noch abgleichen','produktmatrix']
+ ['mk7','Buchbezug','Marktsegmentierung und fünf Marktbearbeitungsstrategien, S. 65–67','marktsegmentierung'],
+ ['mk8','Buchbezug','Ansoff: vier Wachstumsstrategien erklären und zuordnen, S. 71–72','produktmatrix']
 ].map(([id,section,label,lesson])=>({id,section,label,lesson}));
 export const courses={
  main:{id:'main',label:'Mein Kurs',storageKey:'brc-lernwelt-v1',source:'Klausurvorschlag + aktuelle Lehrerergänzung',description:'Dein bisheriger Kurs mit den zusätzlichen Lehrerhinweisen. Andere Themen aus dem Vorschlag bleiben als Wiederholung erhalten.',...Object.fromEntries(['groups','lessons','cards','quiz','plan','examTasks'].map(k=>[k,mainData[k]])),checklist:mainChecklist,exerciseTypes,makeExercise},
