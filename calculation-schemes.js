@@ -55,25 +55,6 @@ const brief={
  differenz:{direction:'Kosten ↓ · Erlöse ↑',goal:'Gesucht: Gewinn in € und %',intro:'Rechne die Kostenseite von oben bis zu den Selbstkosten. Rechne die Erlösseite von unten bis zum Barverkaufspreis. Die Differenz ist dein Gewinn oder Verlust.',steps:['Von oben: Kosten bis zu den Selbstkosten addieren.','Von unten: Rabatt, Skonto und Provision abziehen → Barverkaufspreis.','Gewinn = Barverkaufspreis − Selbstkosten. Ein negativer Wert ist ein Verlust.','Gewinnzuschlag in % = Gewinn ÷ Selbstkosten × 100. Die Selbstkosten sind die Basis.']}
 };
 
-const percentBases={materialGK:'Materialeinzelkosten',fertigungGK:'Fertigungslöhne',verwaltung:'Herstellkosten',vertrieb:'Herstellkosten',gewinn:'Selbstkosten',provision:'Zielverkaufspreis',skonto:'Zielverkaufspreis',rabatt:'Listenverkaufspreis'};
-const percentRates={materialGK:'mgk',fertigungGK:'fgk',verwaltung:'vwgk',vertrieb:'vtgk',gewinn:'gewinnsatz',provision:'provision',skonto:'skonto',rabatt:'rabatt'};
-
-export function renderLessonCalculationOverview(root,mode){
- if(!schemeModes.some(([id])=>id===mode))throw Error('Unbekanntes Kalkulationsschema');
- let example=false,rules=false;
- const b=brief[mode],d={...schemeExample,liste:mode==='differenz'?560:600},r=calculateScheme(mode,d);
- const draw=()=>{
-  root.innerHTML=`<section class="lesson-scheme scheme-sheet ${rules?'scheme-with-rules':''}" aria-labelledby="lesson-scheme-title"><header class="scheme-sheet-head"><span class="eyebrow acid">DEINE KALKULATIONSÜBERSICHT</span><h2 id="lesson-scheme-title">Das Schema auf einen Blick.</h2><p>${b.goal} · Alle Preise netto.</p><div class="scheme-direction">${b.direction}</div></header>
-  <div class="scheme-controls"><label><input type="checkbox" id="lesson-scheme-rules" ${rules?'checked':''}> Rechenregeln zeigen</label><label><input type="checkbox" id="lesson-scheme-example" ${example?'checked':''}> Zahlenbeispiel einblenden</label></div>
-  <table class="scheme-table"><caption>${schemeModes.find(([id])=>id===mode)[1]} · Zuschläge immer von ihrer angegebenen Basis berechnen</caption><thead><tr><th scope="col"><span class="sr-only">Rechenzeichen</span></th><th scope="col">Kosten- und Preisaufbau</th>${example?'<th scope="col">Beispiel</th>':''}</tr></thead><tbody>${schemeRows(mode).map(row=>`<tr class="${row.total?'scheme-total ':''}${row.target?'scheme-target ':''}${['lohn','herstellkosten','selbstkosten','bar','ziel','liste'].includes(row.id)?'scheme-block':''}"><td class="scheme-sign" aria-hidden="true">${row.sign}</td><th scope="row"><span>${row.label}${row.target?'<b class="scheme-goal">GESUCHT</b>':''}</span>${percentBases[row.id]&&!(mode==='differenz'&&row.id==='gewinn')?`<span class="lesson-scheme-base">${example?number(d[percentRates[row.id]])+' % · ':''}Basis: ${percentBases[row.id]} (100 %)</span>`:''}<small>${row.rule}</small></th>${example?`<td class="scheme-value">${euro(r[row.id])}</td>`:''}</tr>`).join('')}</tbody></table>
-  ${mode==='differenz'?`<div class="scheme-profit"><strong>Gewinn = Barverkaufspreis − Selbstkosten</strong><span>Gewinnzuschlag = Gewinn ÷ Selbstkosten × 100${example?` = ${number(r.gewinnprozent)} %`:''}</span></div>`:''}
-  <p class="scheme-legend">${mode==='vorwaerts'?'Skonto und Provision vom Zielpreis, Rabatt vom Listenpreis berechnen. Beim Hochrechnen teilst du durch den verbleibenden Prozentsatz.':mode==='rueckwaerts'?'Unten beim Listenpreis beginnen. Rabatt, Skonto und Provision abziehen; Gewinn- und Gemeinkostenzuschläge durch Division zurückrechnen. Die „+“-Zeichen zeigen den Preisaufbau, nicht den Rückweg.':'Kosten von oben bis zu den Selbstkosten rechnen; Erlöse von unten bis zum Barverkaufspreis. Der Abstand zwischen beiden ist Gewinn oder Verlust.'}</p>
-  <details class="lesson-scheme-details"><summary>Reihenfolge & wichtige Hinweise</summary><ol>${b.steps.map(step=>`<li>${step}</li>`).join('')}</ol><p>Sondereinzelkosten nur berücksichtigen, wenn sie anfallen. Hier beziehen sich Skonto und Provision beide auf den Zielverkaufspreis. Bei einer anderen ausdrücklich angegebenen Provisionsbasis gilt die Aufgabenstellung.</p>${example?`<p>Eigenes Lernbeispiel: ${mode==='rueckwaerts'?'Listenpreis 600,00 €':`Materialeinzelkosten 100,00 €${mode==='differenz'?', Listenpreis 560,00 €':''}`}; Löhne 80,00 €, Sondereinzelkosten Fertigung 30,00 €, Sondereinzelkosten Vertrieb 25,00 €. Zuschlagssätze stehen an den jeweiligen Zeilen. Intern ohne Zwischenrundung gerechnet, Anzeige auf zwei Nachkommastellen.</p>`:''}</details><a class="text-link lesson-scheme-link" href="#schemes/${mode}">Schema groß öffnen & selbst abfragen ↗</a></section>`;
-  for(const [name,set]of [['rules',value=>rules=value],['example',value=>example=value]])root.querySelector('#lesson-scheme-'+name).onchange=e=>{set(e.target.checked);draw();root.querySelector('#lesson-scheme-'+name).focus({preventScroll:true});};
- };
- draw();
-}
-
 export function renderCalculationSchemes(root,requested,availableTypes=['vorwaerts','rueckwaerts','kalkulation']){
  const mode=schemeModes.some(([id])=>id===requested)?requested:'vorwaerts';
  let example=false,practice=false,rules=false;
