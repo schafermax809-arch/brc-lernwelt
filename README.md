@@ -15,7 +15,7 @@ Zwei getrennte Kursbereiche: **Mein Kurs** (Vorschlag plus aktuelle Lehrerergän
 - Lernzettel zu Kostenrechnung, Beschaffung, Lager, Personal, Führung und Klausurtechnik
 - Suchfunktion und Themenfilter
 - Karteikarten mit eigener Einschätzung und Wiederholung unsicherer Karten
-- Wissensquiz mit sofortiger Begründung und Auswertung
+- Wissensquiz mit sofortiger Begründung und Auswertung; überarbeitete Antwortlängen und pro Runde gemischte Antwortpositionen bei unveränderten Frage-IDs
 - Hauptkurs: acht Rechenaufgabentypen; Frau Gläser: sechs, jeweils mit drei Varianten und Lösungswegen
 - Acht Lernetappen mit Checkliste
 - Vorabi-Vorschlag durcharbeiten: 19 Aufgaben aus den Fotos (9 WEBRITEC / 10 weitere CYCLE-Aufgaben), Antwortfelder mit automatischem Speichern, Tipps, Lösungshinweise, Bearbeitungsmarkierungen und Wiederaufnahme. Enthalten im Hauptkurs-Fortschrittsexport. Fehlende Anlagen und die nach Lehrerergänzung optionale alte Bestellmengenrechnung sind gekennzeichnet. Keine Zusammenrechnung unterschiedlicher Aufgabenfassungen zu einer offiziellen Punktzahl.

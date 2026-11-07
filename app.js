@@ -1,10 +1,11 @@
+import {shuffleQuestionOptions} from './quiz.js?v=20261107-quiz';
 import {learningDefaults,validateLearning,exerciseDraft,storeExercise,nextReview,dueQuestions,dueCards,lessonEvidence,learningSummary,buildDailyPlan} from './learning.js?v=20261107-learning';
 import {numericFeedback,answerHint} from './calculation-coach.js?v=20261107-learning';
 import {renderCalculationSchemes} from './calculation-schemes.js?v=20261107-schemas-tab';
 import {renderMethods} from './methods.js?v=20261105-methods2';
 import {buildGeneralCourse} from './general-mode.js?v=20261107-learning';
 import {mountProposal,proposalDefault,validateProposal,proposalSummary} from './proposal.js?v=20261107-learning';
-import {courses,calculationTotal,activeCalculationIds} from './courses.js?v=20261107-learning';
+import {courses,calculationTotal,activeCalculationIds} from './courses.js?v=20261107-quiz';
 import {parseNumber,round} from './math.js';
 let courseMode='main';try{if(localStorage.getItem('brc-course-v1')==='glaeser')courseMode='glaeser';}catch{}
 let generalView=false;try{generalView=localStorage.getItem('brc-general-view-v1')==='on';}catch{}
@@ -171,7 +172,7 @@ function renderQuiz(filter='all'){
  if(!quizPool(filter).length){$('#quiz-area').innerHTML='<section class="panel result"><h2>Hier ist gerade nichts offen.</h2><p>Keine passenden Fehler oder fälligen Wiederholungen. Du kannst neue Fragen üben oder später wiederkommen.</p><a class="btn secondary" href="#quiz/all">Alle Quizfragen öffnen ↗</a></section>';return;}
  if(quizSession)drawQuiz();else{$('#quiz-area').innerHTML=`<div class="panel result"><div class="score-ring">?</div><h2>Bereit für eine kleine Wissensrunde?</h2><p>${quizPool(filter).length} passende Fragen sind verfügbar. Deine Antworten werden für den Lernfortschritt gespeichert.</p><button id="start-quiz" class="btn">Quiz starten ${icon('arrow')}</button></div>`;$('#start-quiz').onclick=()=>startQuiz(filter);}
 }
-function startQuiz(filter){const all=shuffle(quizPool(filter));quizSession={filter,questions:$('#quiz-count').value==='all'?all:all.slice(0,10),index:0,results:[],selected:null};drawQuiz();}
+function startQuiz(filter){const all=shuffle(quizPool(filter)).map(q=>shuffleQuestionOptions(q));quizSession={filter,questions:$('#quiz-count').value==='all'?all:all.slice(0,10),index:0,results:[],selected:null};drawQuiz();}
 function drawQuiz(){
  const s=quizSession,q=s.questions[s.index];if(!q){drawQuizResult();return;}
  $('#quiz-area').innerHTML=`<div class="training-top"><span>${lesson(q.lesson).title}</span><span>Frage ${s.index+1} / ${s.questions.length}</span></div>${progress(s.index,s.questions.length)}<section class="panel" style="margin-top:20px"><span class="badge">${group(q.group).name}</span><h2 class="quiz-question">${q.question}</h2><div class="quiz-options">${q.options.map((text,i)=>`<button class="option ${s.selected!==null?(i===q.correct?'correct':i===s.selected?'wrong':''):''}" data-answer="${i}" ${s.selected!==null?'disabled':''}><span class="letter">${'ABCD'[i]}</span><span>${text}</span>${s.selected!==null&&i===q.correct?'<span style="margin-left:auto" aria-label="Richtige Antwort">✓</span>':''}${s.selected===i&&i!==q.correct?'<span style="margin-left:auto" aria-label="Falsche Antwort">✕</span>':''}</button>`).join('')}</div>${s.selected!==null?`<div class="feedback ${s.selected===q.correct?'':'wrong'}" role="status"><strong>${s.selected===q.correct?'Richtig. Gut gemacht!':'Noch nicht ganz.'}</strong>${q.explanation}</div><div class="button-row"><button class="btn" id="next-question">${s.index+1===s.questions.length?'Ergebnis ansehen':'Nächste Frage'} ${icon('arrow')}</button></div>`:''}</section>`;
