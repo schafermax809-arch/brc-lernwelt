@@ -8,6 +8,8 @@ Neu: vollständige Kurs-Checklisten mit gekennzeichneten Schwerpunkten und zusä
 
 Recheneingaben und optionale Zwischenschritte werden je Kurs, Ansicht, Typ und Zahlenvariante sofort gespeichert und mit exportiert. Das Öffnen von Lösungen oder Lösungsgrafiken kennzeichnet den Versuch als unterstützt. Ein neuer Versuch ohne Lösung ist möglich. Am Ende jedes Lernzettels gibt es eine Navigation zum vorherigen und nächsten Zettel.
 
+Die Lernzettel zu Vorwärts-, Rückwärts- und Differenzkalkulation enthalten direkt eine tabellarische Übersicht mit Rechenrichtung, Prozentbasen und hervorgehobenen Zwischensummen. Rechenregeln und ein eigenes Zahlenbeispiel lassen sich zuschalten; die Übersicht wird mit dem Lernzettel gedruckt.
+
 Stand 07.11.2026: Arbeitszeitmodelle sind aus beiden Kursen, Checklisten, Lernplänen, Karteikarten, Quiz und den zugehörigen Vorschlags- und Probeklausuraufgaben entfernt.
 
 Zwei getrennte Kursbereiche: **Mein Kurs** (Vorschlag plus aktuelle Lehrerergänzung) und **Frau Gläser** (zusätzliche Checkliste, blaue Akzentfarbe). Lernmarkierungen, Quiz, Checklisten, Exporte und Generalprobe werden pro Kurs getrennt geführt. Im Hauptkurs wird die optimale Bestellmenge ohne Rechnung/Grafik behandelt, bei Frau Gläser dagegen mit Tabelle, Formel und Diagramm. Die bereitgestellten Buchseiten 65–68 und 71–72 sind im Hauptkurs eingearbeitet: Marktsegmentierung mit drei Kriteriengruppen und fünf Bearbeitungsstrategien sowie die Produkt-Markt-Matrix nach Ansoff. Das Fitnessstudio-Beispiel und die Übersicht zur Marktabdeckung von Seite 68 sind ebenfalls enthalten. Die Originalfotos bleiben außerhalb des Repositorys.
