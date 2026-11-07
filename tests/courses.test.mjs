@@ -2,8 +2,16 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {courses,calculationTotal,activeCalculationIds} from '../courses.js';
 import {kennzahlen,vorwaerts,rueckwaerts,lagerkritisch,deckungsbeitrag,andler} from '../math.js';
-import {createHash} from 'node:crypto';
+import {buildGeneralCourse} from '../general-mode.js';
 const near=(a,b)=>assert.ok(Math.abs(a-b)<1e-7,`${a} != ${b}`);
+
+test('Aktueller Lernumfang: Arbeitszeitmodelle fehlen in beiden Kursen und allgemeinen Ansichten',()=>{
+ for(const course of Object.values(courses))for(const c of [course,buildGeneralCourse(course)]){
+  assert.doesNotMatch(JSON.stringify(c),/arbeitszeit|gleitzeit|teilzeit|schichtarbeit|jobsharing/i);
+  for(const l of c.lessons)assert.notEqual(l.id,'arbeitszeit');
+  assert.equal(c.plan.length,8);
+ }
+});
 
 test('Buchabgleich: Ansoff deckt alle vier Produkt-Markt-Kombinationen ab',()=>{
  const l=courses.main.lessons.find(l=>l.id==='produktmatrix');
@@ -14,12 +22,12 @@ test('Buchabgleich: Ansoff deckt alle vier Produkt-Markt-Kombinationen ab',()=>{
  assert.equal(courses.main.quiz.filter(q=>q.lesson===l.id).length,6);
  for(const q of courses.main.quiz){assert.ok(Number.isInteger(q.correct)&&q.correct>=0&&q.correct<q.options.length);assert.equal(new Set(q.options).size,q.options.length);}
 });
-test('Buchabgleich: fünf Bearbeitungsstrategien und unveränderter Gläser-Kurs',()=>{
+test('Buchabgleich: fünf Bearbeitungsstrategien; Gläser behält seinen eigenen Umfang',()=>{
  const l=courses.main.lessons.find(l=>l.id==='marktsegmentierung');
  assert.equal(l.strategies.length,5);
  assert.deepEqual(l.strategies.map(s=>s.scope),['Gesamtmarkt','Ein Segment oder eine Nische','Alle wichtigen Marktsegmente','Mehrere gezielt ausgewählte Segmente','Einzelner Kunde als Segment']);
  assert.match(l.sections.find(([title])=>title.includes('Soziodemografische'))[1],/demografische UND sozioökonomische/);
- assert.equal(createHash('sha256').update(JSON.stringify(courses.glaeser)).digest('hex'),'e15752ebabb3d49f96322f5479ea6f5eb60a3769ce81a9e9a49d84770b2a4370');
+ assert.ok(!courses.glaeser.lessons.some(l=>['marktsegmentierung','produktmatrix'].includes(l.id)));
 });
 test('Hauptkurs: Kennzahlen sowie drei Kalkulationsrichtungen; Bestellmenge ohne Rechenaufgaben',()=>{
  const c=courses.main;
@@ -30,8 +38,8 @@ test('Hauptkurs: Kennzahlen sowie drei Kalkulationsrichtungen; Bestellmenge ohne
  assert.equal(c.makeExercise('kennzahlen',0).answers.length,1);
  assert.match(c.lessons.find(l=>l.id==='produktmatrix').title,/Ansoff/);
 });
-test('Frau Gläser: alle 19 Lernziele und eigenes Bestellmengendiagramm',()=>{
- const c=courses.glaeser;assert.equal(c.checklist.length,19);
+test('Frau Gläser: 18 aktuelle Lernziele und eigenes Bestellmengendiagramm',()=>{
+ const c=courses.glaeser;assert.equal(c.checklist.length,18);
  for(const id of ['abc','lagerplatz','lagerkritisch','fuehrungsstile','deckungsbeitrag'])assert.ok(c.lessons.some(l=>l.id===id));
  assert.ok(!c.lessons.some(l=>l.id==='kennzahlen'));
  const e=c.makeExercise('bestellmenge',0);assert.equal(e.chart.kind,'bestell');assert.ok(e.answers.some(([label])=>label.includes('Theoretische')));

@@ -11,7 +11,6 @@ const examples={
  sourcing:'Ein Betrieb kauft eine komplette Baugruppe statt vieler Einzelteile. Dadurch sinkt der eigene Montageaufwand, während die technische Abhängigkeit vom Modullieferanten steigen kann.',
  scm:'Ein Hersteller und sein Lieferant teilen Bedarfsprognosen. Der Lieferant kann früher planen; beide benötigen dafür verlässliche Daten und abgestimmte Abläufe.',
  personalbeschaffung:'Ein Betrieb benötigt zusätzliche Kapazität. Eine interne Versetzung hilft nur, wenn im abgebenden Bereich Spielraum besteht. Externe Einstellungen können die Gesamtzahl der Beschäftigten erhöhen.',
- arbeitszeit:'Für geeignete Büroaufgaben kann Gleitzeit individuellen Spielraum schaffen. In einer verketteten Fertigung müssen die Teams zunächst die benötigte Besetzung und Übergaben sicherstellen.',
  mbo:'Ein Team vereinbart ein realistisches Qualitätsziel und entwickelt die Verbesserungen selbst. Klare Zuständigkeiten und regelmäßiges Feedback unterstützen die Zielerreichung.',
  kultur:'Ein Betrieb legt Wert auf offene Kommunikation. Regelmäßige Teamgespräche, transparente Zuständigkeiten und gemeinsame Lernzeiten können diese Kultur im Führungsalltag unterstützen.'
 };

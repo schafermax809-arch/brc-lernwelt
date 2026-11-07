@@ -1,5 +1,5 @@
-import * as mainData from './data.js?v=20261105-68';
-import {glaeserData,glaeserChecklist} from './glaeser.js';
+import * as mainData from './data.js?v=20261107-personal';
+import {glaeserData,glaeserChecklist} from './glaeser.js?v=20261107-personal';
 import {exerciseTypes,makeExercise} from './exercises.js';
 import {extendOrderExercise} from './extra-exercises.js';
 const mainChecklist=[

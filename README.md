@@ -4,6 +4,8 @@ Eine responsive deutschsprachige Lernwebsite für die BRC-Vorabiturvorbereitung.
 
 ## Inhalte und Funktionen
 
+Stand 07.11.2026: Arbeitszeitmodelle sind aus beiden Kursen, Checklisten, Lernplänen, Karteikarten, Quiz und den zugehörigen Vorschlags- und Probeklausuraufgaben entfernt.
+
 Zwei getrennte Kursbereiche: **Mein Kurs** (Vorschlag plus aktuelle Lehrerergänzung) und **Frau Gläser** (zusätzliche Checkliste, blaue Akzentfarbe). Lernmarkierungen, Quiz, Checklisten, Exporte und Generalprobe werden pro Kurs getrennt geführt. Im Hauptkurs wird die optimale Bestellmenge ohne Rechnung/Grafik behandelt, bei Frau Gläser dagegen mit Tabelle, Formel und Diagramm. Die bereitgestellten Buchseiten 65–68 und 71–72 sind im Hauptkurs eingearbeitet: Marktsegmentierung mit drei Kriteriengruppen und fünf Bearbeitungsstrategien sowie die Produkt-Markt-Matrix nach Ansoff. Das Fitnessstudio-Beispiel und die Übersicht zur Marktabdeckung von Seite 68 sind ebenfalls enthalten. Die Originalfotos bleiben außerhalb des Repositorys.
 
 - Lernzettel zu Kostenrechnung, Beschaffung, Lager, Personal, Führung und Klausurtechnik
@@ -12,7 +14,7 @@ Zwei getrennte Kursbereiche: **Mein Kurs** (Vorschlag plus aktuelle Lehrerergän
 - Wissensquiz mit sofortiger Begründung und Auswertung
 - Hauptkurs: acht Rechenaufgabentypen; Frau Gläser: sechs, jeweils mit drei Varianten und Lösungswegen
 - Acht Lernetappen mit Checkliste
-- Vorabi-Vorschlag durcharbeiten: 23 Aufgaben aus den Fotos (11 WEBRITEC / 12 weitere CYCLE-Aufgaben), Antwortfelder mit automatischem Speichern, Tipps, Lösungshinweise, Bearbeitungsmarkierungen und Wiederaufnahme. Enthalten im Hauptkurs-Fortschrittsexport. Fehlende Anlagen und die nach Lehrerergänzung optionale alte Bestellmengenrechnung sind gekennzeichnet. Keine Zusammenrechnung unterschiedlicher Aufgabenfassungen zu einer offiziellen Punktzahl.
+- Vorabi-Vorschlag durcharbeiten: 19 Aufgaben aus den Fotos (9 WEBRITEC / 10 weitere CYCLE-Aufgaben), Antwortfelder mit automatischem Speichern, Tipps, Lösungshinweise, Bearbeitungsmarkierungen und Wiederaufnahme. Enthalten im Hauptkurs-Fortschrittsexport. Fehlende Anlagen und die nach Lehrerergänzung optionale alte Bestellmengenrechnung sind gekennzeichnet. Keine Zusammenrechnung unterschiedlicher Aufgabenfassungen zu einer offiziellen Punktzahl.
 - Verkürzte Probeklausur: 85 Minuten, sieben Aufgaben, 67 Punkte, Selbstkorrektur
 - Lernfortschritt im Browser, JSON-Export und validierter Import
 - Druckansicht, Tastaturbedienung und mobile Navigation
