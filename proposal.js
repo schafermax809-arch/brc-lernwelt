@@ -1,4 +1,4 @@
-import {proposalTasks,proposalCases} from './proposal-data.js?v=20261107-personal';
+import {proposalTasks,proposalCases} from './proposal-data.js?v=20261107-learning';
 export {proposalTasks};
 export const proposalDefault=()=>({filter:'web',active:proposalTasks[0].id,tasks:{}});
 export function validateProposal(raw){

@@ -1,4 +1,4 @@
-import {makeExercise} from './exercises.js';
+import {makeExercise} from './exercises.js?v=20261107-learning';
 // Aufgaben in eigenen Worten. Nummern und Punkte sind aus den Fotos abgelesen.
 // Die Fotos mischen mehrere Fassungen; deshalb keine gemeinsame Klausurpunktzahl.
 export const proposalCases={

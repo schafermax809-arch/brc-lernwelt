@@ -38,8 +38,8 @@ test('Hauptkurs: Kennzahlen sowie drei Kalkulationsrichtungen; Bestellmenge ohne
  assert.equal(c.makeExercise('kennzahlen',0).answers.length,1);
  assert.match(c.lessons.find(l=>l.id==='produktmatrix').title,/Ansoff/);
 });
-test('Frau Gläser: 18 aktuelle Lernziele und eigenes Bestellmengendiagramm',()=>{
- const c=courses.glaeser;assert.equal(c.checklist.length,18);
+test('Frau Gläser: 18 aktuelle Lernziele plus vier Wiederholungsziele und eigenes Bestellmengendiagramm',()=>{
+ const c=courses.glaeser;assert.equal(c.checklist.filter(item=>item.scope==='focus').length,18);
  for(const id of ['abc','lagerplatz','lagerkritisch','fuehrungsstile','deckungsbeitrag'])assert.ok(c.lessons.some(l=>l.id===id));
  assert.ok(!c.lessons.some(l=>l.id==='kennzahlen'));
  const e=c.makeExercise('bestellmenge',0);assert.equal(e.chart.kind,'bestell');assert.ok(e.answers.some(([label])=>label.includes('Theoretische')));

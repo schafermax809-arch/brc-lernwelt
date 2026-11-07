@@ -4,6 +4,10 @@ Eine responsive deutschsprachige Lernwebsite für die BRC-Vorabiturvorbereitung.
 
 ## Inhalte und Funktionen
 
+Neu: vollständige Kurs-Checklisten mit gekennzeichneten Schwerpunkten und zusätzlicher Wiederholung; ein Tagesplan aus offenen Fehlern, fälligen Wiederholungen und ungelesenen Themen; getrennte Anzeigen für gelesen, selbst eingeschätzt und Übungserfolg. Quiz- und Kartenwiederholungen werden nach 1, 3, 7 bzw. 14 Tagen fällig. Mehrfaches richtiges Antworten am selben Tag erhöht das Intervall nicht.
+
+Recheneingaben und optionale Zwischenschritte werden je Kurs, Ansicht, Typ und Zahlenvariante sofort gespeichert und mit exportiert. Das Öffnen von Lösungen oder Lösungsgrafiken kennzeichnet den Versuch als unterstützt. Ein neuer Versuch ohne Lösung ist möglich. Am Ende jedes Lernzettels gibt es eine Navigation zum vorherigen und nächsten Zettel.
+
 Stand 07.11.2026: Arbeitszeitmodelle sind aus beiden Kursen, Checklisten, Lernplänen, Karteikarten, Quiz und den zugehörigen Vorschlags- und Probeklausuraufgaben entfernt.
 
 Zwei getrennte Kursbereiche: **Mein Kurs** (Vorschlag plus aktuelle Lehrerergänzung) und **Frau Gläser** (zusätzliche Checkliste, blaue Akzentfarbe). Lernmarkierungen, Quiz, Checklisten, Exporte und Generalprobe werden pro Kurs getrennt geführt. Im Hauptkurs wird die optimale Bestellmenge ohne Rechnung/Grafik behandelt, bei Frau Gläser dagegen mit Tabelle, Formel und Diagramm. Die bereitgestellten Buchseiten 65–68 und 71–72 sind im Hauptkurs eingearbeitet: Marktsegmentierung mit drei Kriteriengruppen und fünf Bearbeitungsstrategien sowie die Produkt-Markt-Matrix nach Ansoff. Das Fitnessstudio-Beispiel und die Übersicht zur Marktabdeckung von Seite 68 sind ebenfalls enthalten. Die Originalfotos bleiben außerhalb des Repositorys.
